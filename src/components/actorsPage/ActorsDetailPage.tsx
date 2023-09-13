@@ -6,10 +6,10 @@ import {AppDispatch} from "../../store/Store";
 import {fetchingActors, fetchingActorsError, fetchingActorsSuccess} from "../../store/Reducer/detailReducer/ActorsDetailSlice";
 import axios from "axios";
 import {APIKEY} from "../../Apikey/APIKEY";
-// import Slider from "react-slick"
 
 const ActorsDetailPage = () => {
     const {detailId} = useParams()
+    const {mode,value} = useAppSelector(state => state.darkModeSlice)
     const {actors, error} = useAppSelector(state => state.actorsSlice)
     const dispatch = useAppDispatch()
     const fetchingActorsPage = async (dispatch: AppDispatch) => {
@@ -45,7 +45,9 @@ const ActorsDetailPage = () => {
     return (
         <div className="container">
 
-            <h2 style={{ paddingBottom: "20px"}}>В главных ролях</h2>
+            <h2 className="text-2xl p-5" style={{
+               color: mode ? "white" : "black"
+            }}>В главных ролях</h2>
             <div className="actors">
                 {
                     actors.map(el => (
@@ -55,8 +57,12 @@ const ActorsDetailPage = () => {
                                     <NavLink to={`/more/${el.id}`} >
                                         <img src={`https://www.themoviedb.org/t/p/w138_and_h175_face${el.profile_path}`}
                                              alt=""/></NavLink>
-                                    <h4>{el.original_name}</h4>
-                                    <h5>{el.character}</h5>
+                                    <h4 style={{
+                                        color: mode ? "white" : "black"
+                                    }}>{el.original_name}</h4>
+                                    <h5 style={{
+                                        color: mode ? "white" : "black"
+                                    }}>{el.character}</h5>
                                 </div>
                             </div>
                         )

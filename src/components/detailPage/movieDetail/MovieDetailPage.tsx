@@ -9,6 +9,7 @@ import {fetchingDetail, fetchingDetailError, fetchingDetailSuccess} from "../../
 
 const MovieDetailPage = () => {
     const {detailId} = useParams()
+    const {mode,value} = useAppSelector(state => state.darkModeSlice)
     const {detail,loader,error} = useAppSelector((state) => state.detailSlice)
     const dispatch = useAppDispatch()
     const fetchingDetailMovie = async (dispatch: AppDispatch) => {
@@ -35,7 +36,7 @@ const MovieDetailPage = () => {
         <div style={{
             background: `linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.9)),url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${backdrop_path})no-repeat center center `
         }}>
-            <div className="container">
+            <div className="container" >
                 <div className="details">
 
                         <div className="details--inform">
@@ -43,13 +44,8 @@ const MovieDetailPage = () => {
                             <div className="details--item">
                                 <h1>{original_title} {release_date}</h1>
                                 <p className="details--desc">{runtime}</p>
-                                {/*{*/}
-                                {/*    genres ? genres.map(el => (*/}
-                                {/*        <div className="details--genres">{el.name}</div>*/}
-                                {/*    )) : ''*/}
-                                {/*}*/}
+
                                 <div className="details--titles">
-                                    {/*<button className="details--titles__vote">{Math.floor (vote_average * 10)}%</button>*/}
                                     <p>Рейтинг</p>
                                 </div>
                                 <p>{overview}</p>

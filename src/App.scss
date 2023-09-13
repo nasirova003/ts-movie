@@ -1,50 +1,68 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-.container{
+
+.container {
   width: 90%;
   margin: 0 auto;
 }
-a{
+
+a {
   text-decoration: none;
 }
 
-#header{
-  background: #032541;
-  .header{
+#header {
+  -webkit-box-shadow: 3px 4px 81px 44px rgba(6, 17, 26, 0.5);
+  -moz-box-shadow: 3px 4px 81px 44px rgba(6, 17, 26, 0.5);
+  box-shadow: 3px 4px 81px 44px rgba(6, 17, 26, 0.5);
+  background: midnightblue;
+
+  .header {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    color: white;
-    &--btn{
-      border-radius: 10px;
+    padding: 20px 0;
+
+    &--btn {
+      border-radius: 15px;
       padding: 5px;
-    }
-    &--input{
-      border-radius: 10px;
-      padding: 5px;
-      outline: none
     }
 
-    &--nav a{
-      margin: 0 20px;
+
+    &--nav a {
+      margin: 0 30px;
       text-decoration: none;
       color: white;
-      font-weight:600;
+      font-weight: 600;
+      font-size: 22px;
     }
-    &--nav a:hover{
+
+    &--nav a:hover {
       text-decoration: underline;
-      transition: .1s;  
+      transition: .1s;
     }
   }
 }
 
-#popular{
-  .popular{
+.input {
+  border-radius: 10px;
+  padding: 7px 250px;
+  margin: 1px;
+}
+
+.input::placeholder {
+  color: grey;
+  position: relative;
+  right: 130%;
+}
+
+#popular {
+
+  .popular {
     padding: 50px 0;
     display: grid;
-    grid-template-columns: repeat(4,4fr);
+    grid-template-columns: repeat(4, 4fr);
     grid-column-gap: 5px;
     grid-row-gap: 11px;
     justify-items: center;
@@ -52,30 +70,34 @@ a{
   }
 }
 
-.details{
+.details {
   padding: 120px 0;
-  &--inform{
+
+  &--inform {
     display: flex;
     grid-column-gap: 60px;
   }
-  &--item{
+
+  &--item {
     color: white;
     font-family: Arial, sans-serif;
     line-height: 40px;
     padding-top: 20px;
   }
-  &--genres{
+
+  &--genres {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 11px;
   }
-  &--titles{
+
+  &--titles {
     display: flex;
     align-items: baseline;
     grid-column-gap: 10px;
 
-    &__vote{
+    &__vote {
       width: 80px;
       height: 80px;
       border-radius: 50%;
@@ -92,29 +114,78 @@ a{
 
 }
 
-.actors{
+.actors {
   padding: 30px 0;
   display: flex;
   overflow-x: auto;
-  &--photo{
+
+  &--photo {
+    width: 160px;
     padding: 20px 20px;
   }
-  &--trailers{
+
+  &--trailers {
     padding: 0 20px;
   }
 }
 
-.bio{
+.bio {
   padding: 50px;
   display: flex;
   grid-column-gap: 20px;
 }
-.search{
-  padding: 50px 0;
-  display: grid;
-  grid-template-columns: repeat(4,4fr);
-  grid-column-gap: 5px;
-  grid-row-gap: 11px;
-  justify-items: center;
-  align-items: start;
+
+.input {
+  padding: 10px 300px;
+  border-radius: 20px;
+}
+
+.btn {
+  position: relative;
+  right: 40px;
+  font-size: 20px;
+}
+
+.text-name {
+  color: white;
+  width: 170px;
+  text-align: center;
+}
+
+.star {
+  color: white;
+  font-size: 25px;
+  background: black;
+  padding: 3px;
+  position: relative;
+  top: 305px;
+  left: 185px;
+}
+
+.home {
+  width: 100%;
+  height: 110%;
+}
+
+.hi {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+}
+
+.hi2 {
+  position: absolute;
+  left: 10%;
+  top: 60%;
+}
+
+.image {
+  opacity: revert;
+  height: 75vh;
+}
+
+.popular-main {
+  -webkit-box-shadow: 3px 2px 45px 4px rgba(13, 15, 13, 0.56);
+  -moz-box-shadow: 3px 2px 45px 4px rgba(13, 15, 13, 0.56);
+  box-shadow: 3px 2px 45px 4px rgba(13, 15, 13, 0.56);
 }

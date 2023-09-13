@@ -13,7 +13,7 @@ const TrailerDetailPage = () => {
     const {detailId} = useParams()
     const {trailer, error} = useAppSelector(state => state.trailersSlice)
     const dispatch = useAppDispatch()
-
+    const {mode,value} = useAppSelector(state => state.darkModeSlice)
     const fetchingTrailersPage = async (dispatch: AppDispatch) => {
         try {
             dispatch(fetchingTrailers())
@@ -32,7 +32,9 @@ const TrailerDetailPage = () => {
 
     return (
         <div className="container">
-            <h2 style={{paddingTop: "20px"}}>Последние трейлеры </h2>
+            <h2 className="text-xl p-5" style={{
+                color: mode ? "white" : "black"
+            }}>Последние трейлеры </h2>
             <div className="actors">   {
                 trailer.map(el => (
                     <div className="actors--trailers">

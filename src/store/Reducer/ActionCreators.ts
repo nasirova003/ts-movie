@@ -4,7 +4,7 @@ import axios from "axios";
 import {APIKEY} from "../../Apikey/APIKEY";
 
 
-export const fetchingPopular = async (dispatch: AppDispatch) => {
+export const fetchingPopular = (APIKEY :any)=>  async (dispatch: AppDispatch) => {
     try {
         dispatch(fetchingMovie())
         const responsive = await  axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${APIKEY}&language=en-US&page=8`)

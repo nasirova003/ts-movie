@@ -8,6 +8,7 @@ import TopRated from "./components/TopRated";
 import DetailPage from "./components/detailPage/DetailPage";
 import MovieBioPage from "./components/actorsPage/moreDetailPage/MovieBioPage";
 import Search from "./components/search/Search";
+import Home from "./components/Home";
 
 function App() {
 
@@ -23,7 +24,8 @@ function App() {
     }}>
       <Header/>
         <Routes>
-            <Route path={'/'} element={<Popular/>}/>
+            <Route path={'/popular'} element={<Popular/>}/>
+            <Route path={'/home'} element={<Home/>}/>
             <Route path={'/now-playing'} element={<NowPlaying/>}/>
             <Route path={'/top-rated'} element={<TopRated/>}/>
             <Route path={'/detail/:detailId'} element={<DetailPage/>}/>
